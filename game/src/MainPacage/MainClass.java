@@ -22,7 +22,7 @@ public class MainClass {
     
     static int ataqueComputador(){
         Random gerador = new Random(); //randomiza a escolha de ataque do computador
-            return gerador.nextInt(4)+1;  //retorna numero entre 1 e 4
+            return gerador.nextInt(3)+1;  //retorna numero entre 1 e 3 
     
     }//fecha ataque computador
     
@@ -83,10 +83,10 @@ public class MainClass {
                     System.err.println("Computador aplicou um ataque especial. ");
                     hpUser -= 4 + (int)(i/20);
                     break;
-                case 4://supremo
+               /* case 4://supremo
                     System.err.println("Computador DEIXOU O OCO. ");
                     hpUser -= 138 + (int)(i/20);
-                    break;
+                    break;*/
             }
         }//fecha if 1
         else{
