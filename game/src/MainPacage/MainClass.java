@@ -28,9 +28,9 @@ public class MainClass {
     
     static void imprimeHP(int hpUser, int hpPC, int contagemEspecials){//metodo para imprimir os hp's e especial
         System.out.println("==================");
-        System.out.println("- HP Usuario: "+ hpUser);
-        System.out.println("- HP Computador: "+ hpPC);
-        System.out.println("* Contagem Especiais: "+ contagemEspecials);
+        System.out.println("- HP Usuario: " + hpUser);
+        System.out.println("- HP Computador: " + hpPC);
+        System.out.println("* Contagem Especiais: " + contagemEspecials);
         System.out.println("==================");
     }//fecha imprime hp
     
@@ -44,7 +44,7 @@ public class MainClass {
     while (hpUser > 0){
         hpPC = 10 + i; 
         System.out.println("=-=-=-=-=-=-=-=");
-        System.out.println("INIMIGO "+i);
+        System.out.println("INIMIGO " + i);
         System.out.println("=-=-=-=-=-=-=-=");
     
         while (hpUser > 0 && hpPC >0){
@@ -52,54 +52,54 @@ public class MainClass {
         escolhaAtaque = ataqueJogador();
         switch(escolhaAtaque){
             case 1://caso o usuario escolha soco
-                System.err.println("Usuario aplicou um soco. ");
+                System.out.println("Usuario aplicou um soco. ");
                 hpPC -= 7;
                 break;
             case 2://caso o usuario escolha especial
                 if (contagemEspecial>0) {
-                System.err.println("Usuario aplicou um ataque especial. ");
+                System.out.println("Usuario aplicou um ataque especial. ");
                 hpPC -= 20;
                 contagemEspecial--;
                 break;}//fechaifelse
                 else{
-                System.err.println("nao ha especiais restantes. ");
+                System.out.println("nao ha especiais restantes. ");
                 break;
                 }//fechaiffinal
             default://caso escolha qualquer outra coisa
-                System.err.println("Opcao Invalida.");
+                System.out.println("Opcao Invalida.");
         }//fecha switch
         if(hpPC > 0){
             escolhaAtaque = ataqueComputador();
             switch(escolhaAtaque){
                 case 1://soco do pc
-                    System.err.println("Computador aplicou um soco. ");
+                    System.out.println("Computador aplicou um soco. ");
                     hpUser -= 2 + (int)(i/10);
                     break;
                 case 2://chute do pc
-                    System.err.println("Computador aplicou um chute. ");
+                    System.out.println("Computador aplicou um chute. ");
                     hpUser -= 3 + (int)(i/10);
                     break;
                 case 3://especial do pc
-                    System.err.println("Computador aplicou um ataque especial. ");
+                    System.out.println("Computador aplicou um ataque especial. ");
                     hpUser -= 4 + (int)(i/20);
                     break;
                 case 4://supremo
-                    System.err.println("Computador Deu um Ataque supremo. ");
-                    hpUser -= 138 + (int)(i/20);
+                    System.out.println("Computador Deu um Ataque supremo. ");
+                    hpUser -= 420 + (int)(i/69);
                     break;
             }
         }//fecha if 1
         else{
-            System.out.println("Inimigo Derrotado. ");
+            System.out.println("Inimigo Doutotado. ");
             }//fecha else
        }//fecha while hpUser > 0 && hpPC > 0
         if(hpUser >0){//if 1
-            hpUser += 5;//recupera 5 hp a cada inimigo derrotado 
+            hpUser += 5;//recupera 5 hp a cada inimigo doutotado 
             if(hpUser > 150){//if 2
                 hpUser = 150;//não deixa a vida passar de 150
             }//fecha if 2
             if(i % 10 == 0){//if 3
-                contagemEspecial++;//quando 10 inimigos forem derrotados voce ganha um especial
+                contagemEspecial++;//quando 10 inimigos forem doutotados voce ganha um especial
             }//fecha if 3
             if (contagemEspecial > 5) {//if 4
                 contagemEspecial = 5;//não deixa o especial passar de 5
@@ -117,11 +117,11 @@ public class MainClass {
        while(continua == 1){
        
           int pontos = battle();
-           System.out.println("Usuario chegou a "+ pontos +" pontos. ");//recorde 
+           System.out.println("Usuario chegou a " + pontos + " pontos. ");//recorde 
            if (pontos > recorde ) {
                recorde = pontos; //sistema de recorde
            }//fecha if
-           System.out.println("RECORDE ATUAL: "+ recorde);//mostra recorde
+           System.out.println("RECORDE ATUAL: " + recorde);//mostra recorde
            
        System.out.println("Fim de Jogo.Deseja Continuar? (1)Sim (2)Nao ");//pergunta de deseja continuar
        continua = leitor.nextInt();//pega as information da pergunta
